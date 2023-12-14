@@ -1,3 +1,5 @@
 (fp_lib_table
   (lib (name "tcrt5000")(type "KiCad")(uri "${KIPRJMOD}/lib/tcrt5000/tcrt5000.pretty")(options "")(descr ""))
+  (lib (name "esp-01f")(type "KiCad")(uri "${KIPRJMOD}/lib/esp-01f/esp-01f.pretty")(options "")(descr ""))
+  (lib (name "magnetic-charger")(type "KiCad")(uri "${KIPRJMOD}/lib/magnetic-charger/magnetic-charger.pretty")(options "")(descr ""))
 )
