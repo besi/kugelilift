@@ -1,0 +1,5 @@
+*.kicad_prl
+plot
+fp-info-cache
+*backups
+_autosave*
