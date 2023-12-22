@@ -3,3 +3,4 @@ plot
 fp-info-cache
 *backups
 _autosave*
+secrets.py
