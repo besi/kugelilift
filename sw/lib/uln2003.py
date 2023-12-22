@@ -3,8 +3,7 @@ import time
 
 LOW = 0
 HIGH = 1
-CORRECTION = 1.020 # Correction factor
-FULL_ROTATION = int(CORRECTION * 4075.7728395061727 / 8) # http://www.jangeox.be/2013/10/stepper-motor-28byj-48_25.html
+FULL_ROTATION = 513 # was 509 initially # http://www.jangeox.be/2013/10/stepper-motor-28byj-48_25.html
 
 HALF_STEP = [
     [LOW, LOW, LOW, HIGH],

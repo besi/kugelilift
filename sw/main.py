@@ -28,4 +28,4 @@ print("First value = " + str(threshhold))
 while True:
     (value, threshhold) = readAndAdjust(adc, threshhold, MARGIN)
     sensorDetected(value)
-    time.sleep(.1)
+    time.sleep(.01)
