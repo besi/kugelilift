@@ -4,6 +4,13 @@ import secrets
 import machine
 import utime
 
+enableWIFI = False
+
+if enableWIFI:
+    print("Starting WIFI connection")
+else:
+    print("Wifi is disabled in boot.py")
+
 def try_connection(timeout = 12):
 
     while not wlan.isconnected() and timeout > 0:
@@ -18,7 +25,7 @@ wlan.active(True)
 # Only for deep sleep ?
 # print('connecting to last AP', end='')
 # print(try_connection(3))
-if not wlan.isconnected():
+if not wlan.isconnected() and enableWIFI:
     ap_list = wlan.scan()
     ## sort APs by signal strength
     ap_list.sort(key=lambda ap: ap[3], reverse=True)
@@ -33,15 +40,16 @@ if not wlan.isconnected():
             print(try_connection())
 
 
+if enableWIFI:
+    # Update the time
+    from ntptime import settime
+    settime()
+    utime.sleep_ms(1000)
 
-# Update the time
-from ntptime import settime
-settime()
-utime.sleep_ms(1000)
+    import gc
+    gc.collect()
 
-import gc
-gc.collect()
+    print(wlan.ifconfig()[0])
+    import webrepl
+    webrepl.start()
 
-print(wlan.ifconfig()[0])
-import webrepl
-webrepl.start()
