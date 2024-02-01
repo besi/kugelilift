@@ -10,7 +10,7 @@ import cuboard
 from cuboard import readAndAdjust
 stepper = Stepper(HALF_STEP, Pin(14, Pin.OUT), Pin(12, Pin.OUT), Pin(5, Pin.OUT), Pin(10, Pin.OUT), delay=.003 )  
 
-ROTATIONS = 4
+ROTATIONS = 1.33333
 MARGIN = 0.9
 
 # photoresistor to 5V  
@@ -18,8 +18,12 @@ MARGIN = 0.9
 def sensorDetected(value):
     global stepper, FULL_ROTATION, ROTATIONS
     print("sensor detected with value " + str(value))
-    stepper.step(FULL_ROTATION * ROTATIONS, -1)
-    
+    stepper.step(int(FULL_ROTATION * ROTATIONS), -1)
+
+# Nod hello
+stepper.step(20, -1)
+stepper.step(20, 1)
+
 
 print("Starting reading ...")
 threshhold = adc.read()
