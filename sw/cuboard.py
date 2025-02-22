@@ -34,7 +34,7 @@ def readAndAdjust(adc,threshhold, margin):
         value = adc.read()
         oldValue = value
         # Wait until a detection was made
-        if value <= t * margin:
+        if value <= 1024:
             
             # Movement detected
             # Check again for threshhold changes
