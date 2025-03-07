@@ -1,5 +1,6 @@
 Kugelilift
 ==========
+![](kugelilift.jpg)
 
 Check out the sources:
 
